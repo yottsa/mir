@@ -69,15 +69,20 @@ createApp({
     );
     const showSeconds = computed(() => true);
 
-    const daysLabel = computed(() => (days.value == 1 ? "dan" : "dana"));
+    const daysLabel = computed(() =>
+      days.value % 10 == 1 && days.value % 100 != 11 ? "dan" : "dana"
+    );
     const hoursLabel = computed(() =>
-      hours.value == 1 ? "sat" : hoursSet.has(hours.value) ? "sata" : "sati"
+      (hours.value % 10 == 1 && hours.value % 100 != 100) ||
+      hoursSet.has(hours.value)
+        ? "sata"
+        : "sati"
     );
     const minutesLabel = computed(() =>
-      minutes.value == 1 ? "minut" : "minuta"
+      minutes.value % 10 == 1 && minutes.value % 100 != 11 ? "minut" : "minuta"
     );
     const secondsLabel = computed(() =>
-      seconds.value == 1
+      seconds.value % 10 == 1 && seconds.value % 100 != 11
         ? "sekund"
         : secondsSet.has(seconds.value)
         ? "sekunde"
