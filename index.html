@@ -1,42 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MiR Union</title>
 
-    <!-- FAVICONS -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="icons/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
 
     <!-- Android Chrome icons -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="icons/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="icons/android-chrome-512x512.png"
-    />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png" />
 
     <!-- PWA essentials -->
     <link rel="manifest" href="manifest.json" />
@@ -48,107 +24,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="MiR Union" />
-
-    <style>
-      [v-cloak] {
-        display: none !important;
-      }
-      html,
-      body,
-      #app {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f9fb;
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial;
-      }
-      .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 1rem;
-      }
-      .countdown {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .card {
-        padding: 1rem 1.25rem;
-        border-radius: 12px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-        min-width: 80px;
-        text-align: center;
-        background: #fff;
-      }
-      .num {
-        font-size: 2.25rem;
-        font-weight: 700;
-        line-height: 1;
-      }
-      .label {
-        font-size: 0.85rem;
-        color: #555;
-        margin-top: 0.35rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .ended {
-        font-size: 1.5rem;
-        color: #d00;
-        font-weight: 600;
-      }
-
-      /* Mobile grid layout */
-      @media (max-width: 600px) {
-        .countdown {
-          gap: 0.6rem;
-        }
-        .num {
-          font-size: 1.5rem;
-        }
-        .card {
-          padding: 0.6rem 1rem;
-          min-width: 50px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/src/assets/main.css" />
   </head>
-
   <body>
-    <div id="app" class="wrapper" v-cloak>
-      <div v-if="ended" class="ended">{{ endMessage }}</div>
-      <div v-else class="countdown">
-        <div class="card" v-if="showDays">
-          <div class="num">{{ days }}</div>
-          <div class="label">{{ daysLabel }}</div>
-        </div>
-        <div class="card" v-if="showHours">
-          <div class="num">{{ hoursPadded }}</div>
-          <div class="label">{{ hoursLabel }}</div>
-        </div>
-        <div class="card" v-if="showMinutes">
-          <div class="num">{{ minutesPadded }}</div>
-          <div class="label">{{ minutesLabel }}</div>
-        </div>
-        <div class="card" v-if="showSeconds">
-          <div class="num">{{ secondsPadded }}</div>
-          <div class="label">{{ secondsLabel }}</div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="script.js"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
