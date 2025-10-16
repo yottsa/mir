@@ -1,6 +1,6 @@
 const { createApp, ref, computed, onMounted, onBeforeUnmount } = Vue;
 
-const END_ISO = "2025-12-28T23:15:00+01:00";
+const END_ISO = "2025-12-27T22:15:00+01:00";
 const END_MESSAGE = "Dobrodošla!";
 
 const hoursSet = new Set([2, 3, 4]);
